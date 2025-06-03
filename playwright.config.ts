@@ -14,8 +14,7 @@ export default defineConfig({
     baseURL: 'https://app.somos.com',
     launchOptions: { devtools: process.env.PWDEBUG ? true : false },
     viewport: { width: 1920, height: 1080 },
-    // trace: 'on-first-retry',
-    trace: 'on'
+    trace: 'on-first-retry'
   },
 
   /* Configure projects for major browsers */

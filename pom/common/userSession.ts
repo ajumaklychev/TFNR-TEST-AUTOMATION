@@ -29,8 +29,6 @@ export class UserSessionHelper {
       localStorage.setItem('preferred_auth0_user', preferredUser);
     }, preferredUser);
 
-    // await this.confirmTFNRegistryIDAlreadyInUse(preferredUser);
-
     await Promise.all([
       this.page.waitForResponse(resp =>
         resp.request().method() === 'GET' &&
