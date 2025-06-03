@@ -14,9 +14,8 @@ test('signs in via UI', { tag: ['@smoke', '@login'] }, async ({ page, login, hom
     await login.login();
 
     await Promise.all([
-        page.waitForResponse(response => response.url().includes('/v1/users/importmaps/portal') && response.status() === 200),
-        page.waitForResponse(response => response.url().includes('/v1/users/environments') && response.status() === 200),
-        page.waitForResponse(response => response.url().includes('/v1/isallowed?resource') && response.status() === 201)
+        page.waitForResponse(response => response.url().includes('v1/products') && response.status() === 200),
+        page.waitForResponse(response => response.url().includes('/v1/users/environments') && response.status() === 200)
     ]);
 
     await expect(page).toHaveURL(/platform\/home/);
@@ -26,9 +25,8 @@ test('signs in via UI', { tag: ['@smoke', '@login'] }, async ({ page, login, hom
     await home.qaDropdownOption.click();
 
     await Promise.all([
-        page.waitForResponse(response => response.url().includes('/v1/users/importmaps/portal') && response.status() === 200),
-        page.waitForResponse(response => response.url().includes('/v1/users/environments') && response.status() === 200),
-        page.waitForResponse(response => response.url().includes('/v1/isallowed?resource') && response.status() === 201)
+        page.waitForResponse(response => response.url().includes('v1/products') && response.status() === 200),
+        page.waitForResponse(response => response.url().includes('/v1/users/environments') && response.status() === 200)
     ]);
 
     await expect(home.environmentsDropdown).toBeVisible();
